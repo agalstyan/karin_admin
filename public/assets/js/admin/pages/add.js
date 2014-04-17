@@ -1,7 +1,7 @@
 $(function(){
     var form = $('#page-form');
     form.find('textarea').ckeditor();
-    form.find('button[type=submit]').click(function(){
+    form.find('button[type=button]').click(function(){
         event.preventDefault();
 
         $(this).text($(this).data('text-tmp'));

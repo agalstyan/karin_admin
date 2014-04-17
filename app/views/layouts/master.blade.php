@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="#">Проекты</a></li>
-                <li class="active"><a href="#">Статические страницы</a></li>
+                <li class="active"><a href="{{ URL::route('pages.index') }}">Статические страницы</a></li>
                 <li><a href="#">Настройки</a></li>
             </ul>
         </div><!--/.nav-collapse -->

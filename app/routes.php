@@ -16,4 +16,4 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::resource('page', 'Karin\PageController');
+Route::resource('pages', 'Karin\PagesController');

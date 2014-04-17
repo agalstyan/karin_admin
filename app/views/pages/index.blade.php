@@ -14,32 +14,32 @@
         <h3 class="panel-title">Список</h3>
     </div>
     <table class="table" style="border-top: 0px">
-        <?php if (empty($pages)): ?>
+        @if (empty($pages))
             <tr>
                 <td>Записей нет</td>
             </tr>
-        <?php else: ?>
+        @else
             <tr>
                 <th style="width: 80%">Заголовок</th>
                 <th></th>
             </tr>
-            <?php foreach ($pages as $page): ?>
+            @foreach ($pages as $page)
                 <tr>
                     <td>
-                        <a href="#" title="Редактировать">
-                            <?=htmlentities($page->title)?>
+                        <a href="{{ URL::route('pages.edit', ['id' => $page->id]) }}" title="Редактировать">
+                            {{ htmlentities($page->title) }}
                         </a>
                     </td>
                     <td>
-                        <a data-url="#" href="#"
+                        <a data-url="{{ URL::route('pages.destroy', ['id' => $page->id]) }}" href="#"
                            class="btn btn-xs btn-danger delete-page" title="Удалить">X</a>
                     </td>
                 </tr>
-            <?php endforeach; ?>
-        <?php endif; ?>
+            @endforeach
+        @endif
         <tr>
             <td colspan="2">
-                <a href="#" class="btn btn-xs btn-success" title="Добавить">+</a>
+                <a href="{{ URL::route('pages.create') }}" class="btn btn-xs btn-success" title="Добавить">+</a>
             </td>
         </tr>
     </table>
